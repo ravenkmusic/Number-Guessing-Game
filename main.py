@@ -30,8 +30,8 @@ def compare_choices(user_guess, computer_choice):
       print(f"The computer choice {computer_choice}.\nYou guessed {computer_choice}. You win!")
 
 def game():
-  print("Welcome to the Number Guessing Game!\nThe computer is thinking of a number between 1 and 100.")
-
+  print(f"Welcome to the Number Guessing Game!\nThe computer is thinking of a number between 1 and 100.")
+  
   computer_choice = random.randint(1, 100)
 
   turns = difficulty()
