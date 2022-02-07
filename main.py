@@ -12,8 +12,6 @@ import random
 easy_level = 10
 hard_level = 5
 
-end_of_game: False
-
 print("Welcome to the Number Guessing Game!\nThe computer is thinking of a number between 1 and 100.")
 
 computer_choice = random.randint(1, 100)
@@ -26,10 +24,6 @@ def difficulty():
   else:
     return hard_level
 
-turns = difficulty()
-
-user_guess = int(input("What number do you think it is? "))
-
 def compare_choices(user_guess, computer_choice):
   if user_guess > computer_choice:
     print(f"Too high. You have {turns} remaining. Enter another guess. ")
@@ -39,15 +33,21 @@ def compare_choices(user_guess, computer_choice):
   elif user_guess == computer_choice:
       print(f"The computer choice {computer_choice}.\nYou guessed {computer_choice}. You win!")
 
+turns = difficulty()
+
+while user_guess != computer_guess:
+  user_guess = int(input("What number do you think it is? "))
+
+
 compare_choices(user_guess, computer_choice)
 
 
 # Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer.
 
  
-    # Track the number of turns remaining.
+# Track the number of turns remaining.
 
-    # If they run out of turns, provide feedback to the player.
+# If they run out of turns, provide feedback to the player.
 
-  # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
+# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
