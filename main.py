@@ -35,11 +35,13 @@ def compare_choices(user_guess, computer_choice):
 
 turns = difficulty()
 
-while user_guess != computer_guess:
+user_guess = 0
+
+while user_guess != computer_choice:
   user_guess = int(input("What number do you think it is? "))
-
-
-compare_choices(user_guess, computer_choice)
+  turns -= 1
+  
+  compare_choices(user_guess, computer_choice)
 
 
 # Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer.
