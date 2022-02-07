@@ -22,9 +22,9 @@ def difficulty():
 
 def compare_choices(user_guess, computer_choice):
   if user_guess > computer_choice:
-    print(f"Too high. You have {turns} remaining. ")
+    print(f"You've guessed too high. ")
   elif user_guess < computer_choice:
-      print(f"Too low. You have {turns} remaining. ")
+      print(f"You've guessed too low. ")
     # If they got the answer correct, show the actual answer to the player.
   elif user_guess == computer_choice:
       print(f"The computer choice {computer_choice}.\nYou guessed {computer_choice}. You win!")
@@ -39,13 +39,15 @@ def game():
   user_guess = 0
 
   while user_guess != computer_choice:
+    print(f"You have {turns} turns remaining.")
     user_guess = int(input("What number do you think it is? "))
     turns -= 1
     
     compare_choices(user_guess, computer_choice)
-  if turns == 0:
-    print("You've run out of guesses. You lose.")
-    return 
+    
+    if turns == 0:
+      print("You've run out of guesses. You lose.")
+      return 
 
   # Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer.
 
@@ -56,3 +58,4 @@ def game():
 
   # Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
 
+game()
